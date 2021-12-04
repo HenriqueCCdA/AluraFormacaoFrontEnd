@@ -2,16 +2,17 @@ import { Tarefa } from "./criaTarefa.js";
 
 export const criaData = (data) => {
     const tarefas = JSON.parse(localStorage.getItem('tarefas')) || []
+    const dataMoment = moment(data, 'DD/MM/YYYY')
     const dataTopo = document.createElement('li');
-    const conteudo = `<p class="content">${data.format('DD/MM/YYYY')}</p>`;
+    const conteudo = `<p class="content">${dataMoment.format('DD/MM/YYYY')}</p>`;
 
     dataTopo.innerHTML = conteudo;
 
-    tarefas.forEach((tarefa => {
+    tarefas.forEach(( (tarefa, id) => {
         const dia = moment(tarefa.dataFormatada, 'DD/MM/YYYY')
-        const diff = data.diff(dia)
+        const diff = dataMoment.diff(dia)
         if(diff === 0){
-            dataTopo.appendChild(Tarefa(tarefa));
+            dataTopo.appendChild(Tarefa(tarefa, id));
         }
     }));
 
