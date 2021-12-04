@@ -154,6 +154,10 @@ body {
   margin: 0;
 }
 
+.content-data {
+  color: #F6F1D1
+}
+
 .task.done .content {
   text-decoration: line-through;
 }

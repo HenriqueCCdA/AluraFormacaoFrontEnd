@@ -4,7 +4,7 @@ export const criaData = (data) => {
     const tarefas = JSON.parse(localStorage.getItem('tarefas')) || []
     const dataMoment = moment(data, 'DD/MM/YYYY')
     const dataTopo = document.createElement('li');
-    const conteudo = `<p class="content">${dataMoment.format('DD/MM/YYYY')}</p>`;
+    const conteudo = `<p class="content-data">${dataMoment.format('DD/MM/YYYY')}</p>`;
 
     dataTopo.innerHTML = conteudo;
 
